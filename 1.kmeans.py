@@ -24,9 +24,8 @@ plt.ylabel("Feature 2")
 plt.grid(True)
 plt.show()
 
-
 # Apply KMeans
-kmeans = KMeans(n_clusters=3, random_state=0)
+kmeans = KMeans(n_clusters=3, n_init=10, random_state=0)
 kmeans.fit(X)
 y_kmeans = kmeans.predict(X)
 
@@ -42,7 +41,6 @@ plt.show()
 # ============================================
 # Part 3: Choosing the Right Number of Clusters (Elbow Method)
 # ============================================
-
 inertias = []
 K_values = range(1, 10)
 
@@ -94,7 +92,6 @@ plt.show()
 # ============================================
 # Part 6: Going Further - Non-spherical data
 # ============================================
-
 from sklearn.datasets import make_moons, make_circles
 
 # Test on moon-shaped data
